@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Juegador : MonoBehaviour
 {
@@ -10,67 +11,68 @@ public class Juegador : MonoBehaviour
     private Vector3Int tilemapPos;
     //habria que programar que el controlador mandara la orden al jugador de moverse
     private int[,] mapa;
+    public Tilemap grid;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
         Mover();
+
     }
 
     void Mover()
     {
-        Vector3 last_pos = transform.position;
 
         if (Input.GetKeyDown(KeyCode.D))
         {
-            if (mapa[(tilemapPos.x+1),tilemapPos.y] != 0)
+            if (mapa[tilemapPos.x + 1, tilemapPos.y] != 0)
             {
                 lastPos = transform.position;
-                transform.position += new Vector3(1, 0, 0);
                 tilemapPos += new Vector3Int(1, 0, 0);
+                transform.position = grid.CellToWorld(tilemapPos);
                 Cola();
             }
             
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-            if (mapa[(tilemapPos.x - 1), tilemapPos.y] != 0)
+            if (mapa[tilemapPos.x - 1, tilemapPos.y] != 0)
             {
                 lastPos = transform.position;
-                transform.position += new Vector3(-1, 0, 0);
                 tilemapPos -= new Vector3Int(1, 0, 0);
+                transform.position = grid.CellToWorld(tilemapPos);
                 Cola();
             }
         }
         if (Input.GetKeyDown(KeyCode.W))
         {
-            if (mapa[tilemapPos.x, (tilemapPos.y + 1)] != 0)
+            if (mapa[tilemapPos.x, tilemapPos.y + 1] != 0)
             {
                 lastPos = transform.position;
-                transform.position += new Vector3(0, 1, 0);
                 tilemapPos += new Vector3Int(0, 1, 0);
+                transform.position = grid.CellToWorld(tilemapPos);
                 Cola();
             }
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            if (mapa[tilemapPos.x, (tilemapPos.y - 1)] != 0)
+            if (mapa[tilemapPos.x, tilemapPos.y - 1] != 0)
             {
                 lastPos = transform.position;
-                transform.position += new Vector3(0, -1, 0);
                 tilemapPos -= new Vector3Int(0, 1, 0);
+                transform.position = grid.CellToWorld(tilemapPos);
                 Cola();
             }
         }
 
 
-
+        transform.position = grid.GetCellCenterWorld(tilemapPos);
 
     }
 
