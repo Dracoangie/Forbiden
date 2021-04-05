@@ -1,21 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/// <summary>
+/// Clase para el boton de cierre de aplicacion del menu principal
+/// </summary>
 public class Apagar : MonoBehaviour
 {
     public SpriteRenderer btnHover;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     private void OnMouseDown()
     {
         Application.Quit();

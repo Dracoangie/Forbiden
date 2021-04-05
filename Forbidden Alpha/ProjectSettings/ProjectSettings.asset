@@ -612,10 +612,10 @@ PlayerSettings:
   facebookXfbml: 0
   facebookFrictionlessRequests: 1
   apiCompatibilityLevel: 6
-  cloudProjectId: 93fe6f4c-0ffa-4ca8-87da-95d4b781c684
+  cloudProjectId: a32563a1-0d61-4c17-9c30-1b30a42e869c
   framebufferDepthMemorylessMode: 0
-  projectName: Pruebas Juego Scripting
-  organizationId: lizarvitoria
+  projectName: Forbidden Alpha
+  organizationId: toni_banamanoni
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0
   disableOldInputManagerSupport: 0

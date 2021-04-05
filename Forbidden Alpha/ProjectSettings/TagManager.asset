@@ -5,6 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - lider
+  - fighter
+  - enemy
+  - TryHealth
+  - WrmHealth
+  - HijHealth
+  - ChrnHealth
+  - Trojan
+  - Worm
+  - Hij
+  - Chrn
   layers:
   - Default
   - TransparentFX
